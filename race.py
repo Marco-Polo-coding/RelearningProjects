@@ -10,8 +10,8 @@ space = np.zeros((400, 400))
 
 # Create the lanes
 lanes = {
-    'green': { 'start_x': 0, 'finish_x': 400,'y': 100},
-    'red': {'start_x': 0, 'finish_x': 400,'y': 200},
-    'blue': {'start_x': 0, 'finish_x': 400,'y': 300},
-    'yellow': {'start_x': 0, 'finish_x': 400,'y': 400}
+    'verde': { 'start_x': 0, 'finish_x': 400,'y': 100},
+    'rojo': {'start_x': 0, 'finish_x': 400,'y': 200},
+    'azul': {'start_x': 0, 'finish_x': 400,'y': 300},
+    'amarillo': {'start_x': 0, 'finish_x': 400,'y': 400}
 }
