@@ -1,0 +1,1 @@
+This is a compendium of projects that that have the objective of making me relearn how to code without ai (or at least try).
