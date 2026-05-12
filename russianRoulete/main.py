@@ -1,3 +1,27 @@
+"""
+Ruleta rusa
+
+1. Se crea un archivo txt con el código de borrar el sistema en cadena de texto
+2. Se pregunta al usuario si quiere jugar
+	2.1 Si dice que sí, empieza el juego
+		2.1.1 Se tiene que elegir un número entra 1 y 6
+		2.1.2 Si sale un número distinto al user_choice, el usuario gana
+			2.1.2.1 Se pregunta al usuario "¿Quieres ver la pistola?"
+				2.1.2.1.1 Si dice que sí se lee el archivo y se muestra el contenido
+				2.1.2.1.2 Si dice que no se muestra el "are you sure"
+					2.1.2.1.2.1 Si se retracta se vuelve a preguntar sobre si quiere ver la pistola
+					2.1.2.1.2.2 Si dice que no se sale del programa
+		2.1.3 Si el user_choice es el mismo que el número de la bala se muestra la pantalla de game over
+		      y abajo se muestra un "Pulsa una tecla para avanzar..."
+		2.1.4 Se pregunta al usuario si quiere jugar otra vez
+			2.1.4.1 Si dice que sí se reinicia el juego
+			2.1.4.2 Si dice que no se cierra el programa
+	2.2 Si dice que no se muestra el ascii "are you sure"
+		2.2.1 Si se retracta se reinicia el juego
+		2.2.2 Si está seguro se cierra el programa
+
+"""
+
 import random
 import os
 
