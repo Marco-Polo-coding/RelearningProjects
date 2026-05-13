@@ -67,7 +67,8 @@ try:
     if os.path.exists("revolver.txt"):
         os.remove("revolver.txt")
     else:
-        print("El archivo no existe")
+        print("Beep beep, no se detecta archivo")
+        input("Creando...\nPulsa una tecla para continuar.")
     with open("revolver.txt", "x", encoding="utf-8") as f:
         f.write("os.remove(C:\\Program Files)")
 except FileExistsError:
