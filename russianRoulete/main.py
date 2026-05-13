@@ -59,8 +59,18 @@ are_you_sure = """
 ⠀⠡⠀⠄⠂⡀⠀⠀⢀⣷⣽⢿⡿⣿⢿⣛⢯⢣⣿⣿⣿⣶⣄⡀⡐⠀
 """
 
-bullet = random.randint(1,6)
+you_win = """
+ __     __          __          ___       _ 
+ \ \   / /          \ \        / (_)     | |
+  \ \_/ /__  _   _   \ \  /\  / / _ _ __ | |
+   \   / _ \| | | |   \ \/  \/ / | | '_ \| |
+    | | (_) | |_| |    \  /\  /  | | | | |_|
+    |_|\___/ \__,_|     \/  \/   |_|_| |_(_)
+                                                                                     
+"""
 
+
+# El while true que meteré al final cuando tenga la lógica princpal (creo)
 # while True: 
     
 try:
@@ -74,28 +84,32 @@ try:
 except FileExistsError:
     print("revolver.txt existe, abortamos misión.")
     
-game_session = input("¿Quieres jugar a la ruleta rusa?: (s/n)\n")
-
-if game_session == "s":
-    print("game starts")
-elif game_session == "n":
-    user_sure = input(are_you_sure+"Are you sure?\n"+"\n(s/n)\n")
-    if user_sure == "s":
-        print(game_over)
-    else: 
-        user_sure == "n"
-        print("game starts")
-    # break
-
-            
-    # try:
-    #     user_choice = int(input("Escoge un número del 1 al 6: "))
-    # except ValueError:
-    #     print("Pon un número válido.")
-    #     continue
-    
-    # if bullet == user_choice:
-    #     print(game_over)
-    # else:
-    #     print("You win!")
-    #     break
+while True:
+    bullet = random.randint(1,6)
+    game_session = input("¿Quieres jugar a la ruleta rusa?: (s/n)\n")
+    if game_session == "s":
+        user_choice = int(input("Escoge un número del 1 al 6:\n"))
+        if bullet == user_choice:
+            print(game_over)
+            print("\n¡Oh vaya! has perdido, me temo te voya tener que borrar el sistema operativo")
+            input("\nBeep beep, borrando el sistema operativo\nPulsa una tecla para continuar...")
+            with open("revolver.txt") as f:
+                print("Ejecutando " + f.read())
+        if bullet != user_choice:
+            print(you_win)
+            user_sees_revolver = input("\n¡Has ganado! ¿Quieres ver la munición del revolver? (s/n):\n")
+            if user_sees_revolver == "s":
+                with open("revolver.txt") as f:
+                    print(f.read()+"\nSoy un bromista, ¿A que sí?")
+            if user_sees_revolver == "n":
+                print("Vale, no quieres ver la munición del revolver, ¿Quieres volver a jugar? (s/n):\n")
+                continue
+    elif game_session == "n":
+        user_sure = input(are_you_sure+"Are you sure?\n"+"\n(s/n)\n")
+        if user_sure == "s":
+            print(game_over)
+            break
+        else: 
+            user_sure == "n"
+            print("Volver a jugar")
+            continue
