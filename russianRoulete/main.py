@@ -102,7 +102,7 @@ while True:
                 with open("revolver.txt") as f:
                     print(f.read()+"\nSoy un bromista, ¿A que sí?")
             if user_sees_revolver == "n":
-                print("Vale, no quieres ver la munición del revolver, ¿Quieres volver a jugar? (s/n):\n")
+                input("Vale, no quieres ver la munición del revolver, Empezamos de nuevo...")
                 continue
     elif game_session == "n":
         user_sure = input(are_you_sure+"Are you sure?\n"+"\n(s/n)\n")
